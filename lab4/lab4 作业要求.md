@@ -38,3 +38,6 @@ e.g. //github.com/veronicadavichi/SOFT130002_lab
 如下：
 
 ![sample](sample.png)
+
+# DDL
+截止时间为**2019年4月11日23:59:59**，也就是下周周四。
