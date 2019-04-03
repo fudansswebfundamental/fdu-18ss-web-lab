@@ -29,7 +29,7 @@ e.g. //github.com/veronicadavichi/SOFT130002_lab
 
 `lab4.html` 是<u>**唯一**</u>需要修改的页面，主要是<u>**使用Bootstrap的css样式**</u>。
 
-本Lab使用的是**<u>Bootstrap 3</u>**，请到Bootstrap官网上查看使用说明。
+本Lab使用的是**Bootstrap 3**，请到Bootstrap官网上查看使用说明。
 
 -------------------
 
