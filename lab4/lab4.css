@@ -1,29 +1,91 @@
 
-h1 { font-size: 3em; font-weight: bold; margin-top: 0;}
+span1 { font-size: 3em;
+        font-weight: bold;
+        margin-top: 0;
+        display: inline;
+}
 
 div#topHeaderRow {
-   font-size: 0.9em;
+    font-size: 0.9em;
 }
 
-.price { 
+nav li{
+    display: inline-block;
+}
+
+#logo{
+   margin-right: 100px;
+    color: silver;
+}
+
+
+header{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+section{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+#mainNavigationRow{
+    font-size: large;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+    font-size: 1.5em;
 
 }
 
-.similarTitle {  }
+.similarTitle {
+
+}
 
 .cartText { 
 
 }
 
+
+
+
+
 footer {
    margin-top: 1em;
    background-color: #E7E7E7;
-
+    padding-bottom: 0;
 }
+
+.list-group li{
+    list-style: none;
+    margin: 20px;
+}
+.container1{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+
 
 .tight-form-group {  }
 
-#copyrightRow { 
-    background-color: #3A3A3A; 
-
+#copyrightRow {
+    
+    background-color: #3A3A3A;
+    color: silver;
+    margin-top:15px;
+    padding: 1px;
 }
+
+#copyrightRow p{
+    margin-left: 100px;
+    margin-top: 3px;
+}
+
+#copyrightRow span{
+    float: right;
+    margin-right: 50px;
+}
+
