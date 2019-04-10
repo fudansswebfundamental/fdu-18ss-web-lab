@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter5</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="lab4.css" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+    <div id="topHeaderRow" class=" navbar " style="background-color: black">
+        <div class=" navbar-inverse">
+            <div class="navbar-header navbar-inverse">
+                <a class="navbar-brand" href="#" style="color: grey">Welcome to <span
+                        style="font-weight: bolder;font-family: 'Courier New';font-style: italic">Art Store</span>,login
+                    or create new account</a>
+            </div>
+
+            <div class="navbar-inverse">
+                <ul class="nav nav-tabs navbar-right navbar-inverse" role="tablist">
+                    <li><a href="#" style="color: grey"><span class="glyphicon glyphicon-user"></span> My Account</a>
+                    </li>
+                    <li><a href="#" style="color: grey"><span class="glyphicon glyphicon-gift"></span>
+                        Wish List</a></li>
+                    <li><a href="#" style="color: grey"><span class="glyphicon glyphicon-shopping-cart"></span>
+                        Shopping Cart</a></li>
+                    <li><a href="#" style="color: grey"><span class="glyphicon glyphicon-arrow-right"></span>
+                        Checkout</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>   <!-- end topHeaderRow -->
+
+    <div id="logoRow">
+
+        <div class="row"><h1 class="col-md-9">Art Store</h1>
+
+            <!---->
+            <div class=" col-md-2">
+                <div class="input-group" style="padding-top:30px ">
+                    <input type="text" placeholder="Search" name="search" style="width: 220px;height: 31px">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+
+            </div>
+        </div>  <!-- end logoRow -->
+    </div>
+
+
+    <div id="mainNavigationRow" class="navbar">
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Art Works</a></li>
+                <li><a href="#">Artists</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Specials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Special 1</a></li>
+                        <li><a href="#">Special 2</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+    </div>  <!-- end mainNavigationRow -->
+
+</header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10"><h2>Self-portrait in a Straw Hat</h2>
+            <p>By <a href="#">Louise Elisabeth Lebrun</a></p>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/art/113010.jpg" class="img-thumbnail img-responsive"
+                         alt="Self-portrait in a Straw Hat"/></div>
+                <div class="col-md-8">
+                    <div>
+                        <p>
+                            The painting appears, after cleaning, to be an autograph replica of a picture, the original
+                            of which was
+                            painted in Brussels in 1782 in free imitation of Rubens's 'Chapeau de Paille', which LeBrun
+                            had seen in
+                            Antwerp. It was exhibited in Paris in 1782 at the Salon de la Correspondance. LeBrun's
+                            original is recorded
+                            in a private collection in France.
+                        </p>
+                        <p class="price" style="color: red;font-weight: bolder">$700</p>
+                        <div>
+                            <button type="button" class="btn btn-default">
+                                <a href="#"><span class="glyphicon glyphicon-gift"></span> Add to Wish List</a>
+                            </button>
+                            <button type="button" class="btn btn-default" style="margin-left: 0">
+                                <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Shopping Cart</a>
+                            </button>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div>
+                            <table class="table table-bordered " style="border-radius: 600px">
+                                <tr class="active">
+                                    <th colspan="2">Product Details
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th>Date:</th>
+                                    <td>1782</td>
+                                </tr>
+                                <tr>
+                                    <th>Medium:</th>
+                                    <td>Oil on canvas</td>
+                                </tr>
+                                <tr>
+                                    <th>Dimensions:</th>
+                                    <td>98cm x 71cm</td>
+                                </tr>
+                                <tr>
+                                    <th>Home:</th>
+                                    <td><a href="#">National Gallery, London</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Genres:</th>
+                                    <td><a href="#">Realism</a>, <a href="#">Rococo</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Subjects:</th>
+                                    <td><a href="#">People</a>, <a href="#">Arts</a></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <div id="fourPic">
+                <h3>Similar Products </h3>
+                <div class="col-md-3 panel panel-default"
+                     style="margin-left:20px;max-width: 210px; padding-bottom: 5px"><img
+                        src="images/art/thumbs/116010.jpg"
+                        class="img-thumbnail img-responsive" alt="...">
+                    <div>
+                        <p class="similarTitle"><a href="#">Artist Holding a Thistle</a></p>
+                        <button type="button" class="btn-primary"><span
+                                class="glyphicon glyphicon-exclamation-sign"></span> View
+                        </button>
+                        <button type="button" class="btn-success"><span class="glyphicon glyphicon-gift"></span>
+                            Wish
+                        </button>
+                        <button type="button" class="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span>
+                            Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 panel panel-default"
+                     style="margin-left:20px;max-width: 210px; padding-bottom: 5px"><img
+                        src="images/art/thumbs/120010.jpg"
+                        class="img-thumbnail img-responsive" alt="...">
+                    <div>
+                        <p class="similarTitle"><a href="#">Portrait of Eleanor of Toledo</a></p>
+                        <button type="button" class="btn-primary"><span
+                                class="glyphicon glyphicon-exclamation-sign"></span> View
+                        </button>
+                        <button type="button" class="btn-success"><span class="glyphicon glyphicon-gift"></span>
+                            Wish
+                        </button>
+                        <button type="button" class="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span>
+                            Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 panel panel-default"
+                     style="margin-left:20px;max-width: 210px; padding-bottom: 5px"><img
+                        src="images/art/thumbs/107010.jpg"
+                        class="img-thumbnail img-responsive" alt="...">
+                    <div>
+                        <p class="similarTitle"><a href="#">Madame de Pompadour</a></p>
+                        <button type="button" class="btn-primary"><span
+                                class="glyphicon glyphicon-exclamation-sign"></span> View
+                        </button>
+                        <button type="button" class="btn-success"><span class="glyphicon glyphicon-gift"></span>
+                            Wish
+                        </button>
+                        <button type="button" class="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span>
+                            Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 panel panel-default"
+                     style="margin-left:20px;max-width: 210px; padding-bottom: 5px"><img
+                        src="images/art/thumbs/106020.jpg"
+                        class="img-thumbnail img-responsive" alt="...">
+                    <div>
+                        <p class="similarTitle"><a href="#">Girl with a Pearl Earring</a></p>
+                        <button type="button" class="btn-primary"><span
+                                class="glyphicon glyphicon-exclamation-sign"></span> View
+                        </button>
+                        <button type="button" class="btn-success"><span class="glyphicon glyphicon-gift"></span>
+                            Wish
+                        </button>
+                        <button type="button" class="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span>
+                            Cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-2 ">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h3 class="panel-title">Cart </h3></div>
+                <div style="padding:10px 10px 10px 10px">
+                    <div class="row">
+                        <div class="col-sm-2"><a href="#">
+                            <img src="images/art/tiny/116010.jpg" alt="..." width="32">
+                        </a></div>
+                        <div class="col-sm-9" style="margin-left: 7px">
+                            <small><a href="#">Artist Holding a Thistle<br></a></small>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"><a href="#">
+                            <img src="images/art/tiny/113010.jpg" alt="..." width="32">
+                        </a></div>
+                        <div class="col-sm-9" style="margin-left: 7px">
+                            <small><a href="#">Self-portrait in a Straw Hat</a></small>
+                        </div>
+
+                    </div>
+
+
+                    <strong class="cartText"><br>Subtotal: <span style="color: #dbc59e">$1200</span></strong>
+                    <div class="row" style="margin-left: 1px;font-size: xx-small">
+                        <button type="button" class="btn-primary"><span
+                                class="glyphicon glyphicon-exclamation-sign"></span> Edit
+                        </button>
+                        <button type="button" class="btn-primary"><span
+                                class="glyphicon glyphicon-arrow-right	"></span>Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading"><h3 class="panel-title">Popular Artists</h3></div>
+
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">Caravaggio</a></li>
+                    <li class="list-group-item"><a href="#">Cezanne</a></li>
+                    <li class="list-group-item"><a href="#">Matisse</a></li>
+                    <li class="list-group-item"><a href="#">Michelangelo</a></li>
+                    <li class="list-group-item"><a href="#">Picasso</a></li>
+                    <li class="list-group-item"><a href="#">Raphael</a></li>
+                    <li class="list-group-item"><a href="#">Van Gogh</a></li>
+                </ul>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading"><h3 class="panel-title">Popular Genres</h3></div>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">Baroque</a></li>
+                    <li class="list-group-item"><a href="#">Cubism</a></li>
+                    <li class="list-group-item"><a href="#">Impressionism</a></li>
+                    <li class="list-group-item"><a href="#">Renaissance</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="container" id="bottom">
+    <div class="row">
+        <div class="col-md-3" style="padding-left: 80px"><h4><span class="glyphicon glyphicon-exclamation-sign"></span>
+            About Us</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's
+                standard dummy text ever since the 1500s.</p></div>
+        <div class="col-md-3">
+            <h4><span class="glyphicon glyphicon-phone"></span>
+                Customer Service</h4>
+            <ul class="list-group">
+                <li class="list-group-item" style="background-color: gainsboro"><a href="#">Delivery Information</a>
+                </li>
+                <li class="list-group-item" style="background-color: gainsboro"><a href="#">Privacy Policy</a></li>
+                <li class="list-group-item" style="background-color: gainsboro"><a href="#">Shipping</a></li>
+                <li class="list-group-item" style="background-color: gainsboro"><a href="#">Terms and Conditions</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h4><span class="glyphicon glyphicon-shopping-cart"></span>
+                Just Ordered</h4>
+            <div class="row" style="margin-bottom: 8px">
+                <div class="col-sm-3"><a href="#"><img src="images/art/tiny/13030.jpg" alt="..."></a></div>
+                <div class="col-sm-8">
+                    <p><a href="#">Arrangement in Grey and Black</a></p>
+                    <em>5 minutes ago</em></div>
+
+            </div>
+            <div class="row" style="margin-bottom: 8px">
+                <div class="col-sm-3"><a href="#">
+                    <img src="images/art/tiny/116010.jpg" alt="...">
+                </a></div>
+                <div class="col-sm-8"><p><a href="#">Artist Holding a Thistle</a></p>
+                    <em>11 minutes ago</em></div>
+
+
+            </div>
+
+            <div class="row" style="margin-bottom: 8px">
+                <div class="col-sm-3"><a href="#">
+                    <img src="images/art/tiny/113010.jpg" alt="...">
+                </a>
+                </div>
+                <div class="col-sm-8"><p><a href="#">Self-portrait in a Straw Hat</a></p>
+                    <em>23 minutes ago</em></div>
+
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h4><span class="glyphicon glyphicon-envelope"></span>
+                Contact us</h4>
+            <div class="form-group">
+                <div class="row" style="margin-bottom: 8px">
+                    <label class="col-sm-3 control-label" for="name">Name</label>
+                    <div class="col-sm-9"><input class="form-control" type="text" name="email"
+                                                 placeholder="Enter name ..."></div>
+                </div>
+                <div class="row" style="margin-bottom: 8px">
+                    <label class="col-sm-3 control-label" for="name">Email</label>
+                    <div class="col-sm-9"><input class="form-control" type="email" name="email"
+                                                 placeholder="Enter email ..."></div>
+                </div>
+                <div class="row" style="margin-bottom: 8px">
+                    <label class="col-sm-3 control-label" for="name">Message</label>
+                    <div class="col-sm-9"><textarea rows="3" class="form-control" name="email"
+                                                    placeholder="Enter message ..."></textarea></div>
+                </div>
+
+
+                <button type="submit" class="btn-primary  btn-lg btn-block">Submit</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: black;color: darkgray">
+        <div id="copyrightRow">
+            <footer>
+                <div class="row">
+                    <div class="col-sm-10">All images are copyright to their owners. This is just a hypothetical site
+                    </div>
+                    <div class="col-sm-2">&copy; 2014 Copyright Art Store</div>
+                </div>
+                <p>
+                    <span class="text-right"></span></p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="bootstrap-3.0.0/assets/js/jquery.js"></script>
+<script src="bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
