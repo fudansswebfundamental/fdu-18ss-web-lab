@@ -59,7 +59,7 @@
                <form class="form-inline" role="search">
                <div class="input-group">
                   <label class="sr-only" for="search">Search</label>
-                  <input type="text" class="form-control" placeholder="Search" name="search">
+                  <input type="text" class="form-control" placeholder="Search" name="search" id="search">
                   <span class="input-group-btn">
                   <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                   </span>
@@ -125,54 +125,26 @@
             <th>Price</th>
             <th>Amount</th>
          </tr>
-
-         <!-- 这是你需要修改的地方 -->
-         <!-- 本来是下面这样👇 -->
-
-         <!-- <tr>
-            <td><img class="img-thumbnail" src="images/art/tiny/116010.jpg" alt="..."></td>
-            <td>Artist Holding a Thistle</td>
-            <td>2</td>
-            <td>$500</td>
-            <td>$1000</td>
+         <tr id="goods1">
          </tr>
-         <tr>
-            <td><img class="img-thumbnail" src="images/art/tiny/113010.jpg" alt="..."></td>
-            <td>Self-portrait in a Straw Hat</td>
-            <td>1</td>
-            <td>$700</td>
-            <td>$700</td>
-         </tr>  -->
-         
-         <!-- 你需要按照图片上的要求使用javascript来完成 -->
-         <!-- 所需要的数据在这里 -->
-         <!--
-         $file1 = '116010.jpg';
-         $product1 = 'Artist Holding a Thistle';
-         $quantity1 = 2;
-         $price1 = 500;
-
-         $file2 = '113010.jpg';
-         $product2 = 'Self-portrait in a Straw Hat';
-         $quantity2 = 1;
-         $price2 = 700;
-        -->
+         <tr id="goods2">
+         </tr>
 
          <tr class="success strong">
             <td colspan="4" class="moveRight">Subtotal</td>
-            <td >$1700</td>
+             <td >$<span id="subtotal"></span></td>
          </tr>
          <tr class="active strong">
             <td colspan="4" class="moveRight">Tax</td>
-            <td>$170</td>
+             <td >$<span id="tax"></span></td>
          </tr>  
          <tr class="strong">
             <td colspan="4" class="moveRight">Shipping</td>
-            <td>$100</td>
+             <td >$<span id="shipping"></span></td>
          </tr> 
          <tr class="warning strong text-danger">
             <td colspan="4" class="moveRight">Grand Total</td>
-            <td>$1970</td>
+             <td >$<span id="grandtotal"></span></td>
          </tr>    
          <tr >
             <td colspan="4" class="moveRight"><button type="button" class="btn btn-primary" >Continue Shopping</button></td>
@@ -233,11 +205,11 @@
             <form role="form">
               <div class="form-group tight-form-group">
                 <label class="sr-only" for="name">Name</label>
-                <input type="text" class="form-control" name="email" placeholder="Enter name ...">
+                <input type="text" class="form-control" name="email" placeholder="Enter name ..." id="name">
               </div> 
               <div class="form-group tight-form-group">
                 <label class="sr-only" for="email">Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Enter email ...">
+                <input type="email" class="form-control" name="email" placeholder="Enter email ..." id="email">
               </div> 
               <div class="form-group tight-form-group">
                 <label class="sr-only" for="email">Email</label>
@@ -260,9 +232,41 @@
    </div>
 </footer>
 
+<script>
+    good=[
+        ['goods1','116010.jpg','Artist Holding a Thistle',2,500],
+        ['goods2','113010.jpg','Self-portrait in a Straw Hat',1,700]
+    ]
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+    window.onload=function(){
+        for (i=0;i<=1;i++){
+            goods(good[i][0],good[i][1],good[i][2],good[i][3],good[i][4])
+        }
+        pay();
+    }
+
+    function goods(id,file,product,quantity,price) {
+        document.getElementById(id).innerHTML='<td><img class="img-thumbnail" src="images/art/tiny/'+file+'" alt="..."></td>\n' +
+            '            <td>'+product+'</td>\n' +
+            '            <td>'+quantity+'</td>\n' +
+            '            <td>$'+price+'</td>\n' +
+            '            <td>$'+(quantity*price)+'</td>'
+    }
+    function pay() {
+        subtotal=good[0][3]*good[0][4]+good[1][3]*good[1][4];
+        tax=subtotal*0.1;
+        shipping=100;
+        grandtotal=subtotal+tax+shipping;
+
+        document.getElementById('subtotal').innerHTML=subtotal;
+        document.getElementById('tax').innerHTML=tax;
+        document.getElementById('shipping').innerHTML=shipping;
+        document.getElementById('grandtotal').innerHTML=grandtotal;
+    }
+</script>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="bootstrap3_defaultTheme/assets/js/jquery.js"></script>
     <script src="bootstrap3_defaultTheme/dist/js/bootstrap.min.js"></script>    
