@@ -70,13 +70,11 @@ figcaption {
 }
 
 .tiled {
-    background-image:url(../images/stripes.jpg);
+    background-image:url(./images/stripes.jpg);
     background-repeat:repeat; 
 }
 
-/* temp tester 
-#imgManipulated img {
-   filter: opacity(62%) brightness(50%) contrast(50%);   
--webkit-filter: opacity(62%) brightness(50%) contrast(50%);  
-}
-*/
+/*#imgManipulated img {*/
+/*   filter: opacity(62%) brightness(50%) contrast(50%);   */
+/*-webkit-filter: opacity(62%) brightness(50%) contrast(50%);  */
+/*}*/
