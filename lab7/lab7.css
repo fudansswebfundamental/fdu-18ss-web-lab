@@ -43,7 +43,7 @@ h1 {
     background-color: white;
 
 }
-button {
+input {
     background-color: #EF6C00;
     color: white;
     border: 0;
@@ -70,7 +70,7 @@ figcaption {
 }
 
 .tiled {
-    background-image:url(../images/stripes.jpg);
+    background-image:url(images/stripes.jpg);
     background-repeat:repeat; 
 }
 
