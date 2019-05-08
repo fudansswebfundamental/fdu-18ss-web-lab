@@ -1,5 +1,8 @@
 
-h1 { font-size: 3em; font-weight: bold; margin-top: 0;}
+h1 { font-size: 3em;
+    font-weight: bold;
+
+}
 
 div#topHeaderRow {
    font-size: 0.9em;
@@ -17,13 +20,30 @@ div#topHeaderRow {
 
 footer {
    margin-top: 1em;
-   background-color: #E7E7E7;
+   background-color:black;
 
 }
 
 .tight-form-group {  }
 
 #copyrightRow { 
-    background-color: #3A3A3A; 
 
+}
+
+.navbar-inverse a{
+color: white;
+}
+
+
+
+#bottom{
+    background-color: gainsboro;
+    max-width: 100%;
+}
+
+#fourPic img{
+    text-align: center;
+}
+#fourPic button{
+    font-size: x-small;
 }

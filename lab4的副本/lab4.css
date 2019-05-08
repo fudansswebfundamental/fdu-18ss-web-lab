@@ -1,0 +1,49 @@
+
+h1 { font-size: 3em;
+    font-weight: bold;
+
+}
+
+div#topHeaderRow {
+   font-size: 0.9em;
+}
+
+.price { 
+
+}
+
+.similarTitle {  }
+
+.cartText { 
+
+}
+
+footer {
+   margin-top: 1em;
+   background-color:black;
+
+}
+
+.tight-form-group {  }
+
+#copyrightRow { 
+
+}
+
+.navbar-inverse a{
+color: white;
+}
+
+
+
+#bottom{
+    background-color: gainsboro;
+    max-width: 100%;
+}
+
+#fourPic img{
+    text-align: center;
+}
+#fourPic button{
+    font-size: x-small;
+}
