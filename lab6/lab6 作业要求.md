@@ -21,7 +21,6 @@ e.g. //github.com/veronicadavichi/**fdu-18ss-web-lab**
 /lab6
 	/lab6.html
 	/lab6.css
-	/lab6.js
 	/images
 	/lab6 作业要求.md
 ```
