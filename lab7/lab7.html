@@ -57,6 +57,13 @@
             });
             //点击reset
             $("#resetFilters").click(function () {
+                //把数字变回来
+                $("#numOpacity").text(100);
+                $("#numSaturation").text(100);
+                $("#numBrightness").text(100);
+                $("#numHue").text(0);
+                $("#numGray").text(0);
+                $("#numBlur").text(0);
                 //去掉滤镜
                 $("#big").css("filter","none" );
                 //图标方块变回去
