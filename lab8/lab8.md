@@ -4,6 +4,9 @@
 
 本次 Lab 主要涉及 服务器环境的配置 && PHP 的基础使用
 
+## 关于如何安装XMAPP
+还未安装好的同学请看[此视频](https://mooc1-1.chaoxing.com/nodedetailcontroller/visitnodedetail?courseId=203371380&knowledgeId=147185698)！
+
 ## 要求
 
 1. 本次 lab 不要求 `css` \\ `js` \\ `html` 的编写，我们已经提供了其它必需的文件，但你可以根据你的需要决定是否修改这些文件
