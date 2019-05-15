@@ -35,7 +35,7 @@ e.g. //github.com/veronicadavichi/**fdu-18ss-web-lab**
 
 1.所有事件处理函数必须等到页面加载完成之后才生效。
 
-2.在 `<head>` 中导入在线的jQuery文件 `http://code.jquery.com/jquery-3.1.0.min.js` 。
+2.在 `<head>` 中导入自己下载的jQuery文件，也可以使用在线的文件，例如 `http://code.jquery.com/jquery-3.1.0.min.js` 。
 
 3.使用 `jQuery` 来响应右侧缩略图的点击事件。通过替换 ` <figure>` 元素中 `<img>` 元素的 `src` 属性来显示被点击的图片。(提示：获取被点击图片的`src`属性，然后将路径字符串中的 `small` 修改为 `medium` )
 
