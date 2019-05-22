@@ -18,7 +18,7 @@
    <![endif]-->
 </head>
 
-<body>
+<body onload="f1();f2();f3()">
 
 <header>
 
@@ -129,22 +129,24 @@
          <!-- 这是你需要修改的地方 -->
          <!-- 本来是下面这样👇 -->
 
-         <!-- <tr>
+         <tr style="display: none" id="picture1">
             <td><img class="img-thumbnail" src="images/art/tiny/116010.jpg" alt="..."></td>
             <td>Artist Holding a Thistle</td>
             <td>2</td>
             <td>$500</td>
-            <td>$1000</td>
+            <td>$<span id = "amount1">1000</span></td>
          </tr>
-         <tr>
+         <tr style="display: none" id="picture2">
             <td><img class="img-thumbnail" src="images/art/tiny/113010.jpg" alt="..."></td>
             <td>Self-portrait in a Straw Hat</td>
             <td>1</td>
             <td>$700</td>
-            <td>$700</td>
-         </tr>  -->
-         
+            <td>$<span id = "amount2">700</span></td>
+         </tr>
+
          <!-- 你需要按照图片上的要求使用javascript来完成 -->
+
+
          <!-- 所需要的数据在这里 -->
          <!--
          $file1 = '116010.jpg';
@@ -160,19 +162,19 @@
 
          <tr class="success strong">
             <td colspan="4" class="moveRight">Subtotal</td>
-            <td >$1700</td>
+            <td >$<span id="amount"></span></td>
          </tr>
          <tr class="active strong">
             <td colspan="4" class="moveRight">Tax</td>
-            <td>$170</td>
+            <td>$<span id="tax"></span></td>
          </tr>  
          <tr class="strong">
             <td colspan="4" class="moveRight">Shipping</td>
-            <td>$100</td>
+            <td>$<span id = "shipping"></span></td>
          </tr> 
          <tr class="warning strong text-danger">
             <td colspan="4" class="moveRight">Grand Total</td>
-            <td>$1970</td>
+            <td>$<span id="total"></span></td>
          </tr>    
          <tr >
             <td colspan="4" class="moveRight"><button type="button" class="btn btn-primary" >Continue Shopping</button></td>
@@ -264,6 +266,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="lab5.js"></script>
     <script src="bootstrap3_defaultTheme/assets/js/jquery.js"></script>
     <script src="bootstrap3_defaultTheme/dist/js/bootstrap.min.js"></script>    
   </body>

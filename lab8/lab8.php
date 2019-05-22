@@ -1,7 +1,6 @@
 <?php include 'functions.inc.php'; ?>
-<?php 
-
-include 'data.inc.php'; 
+<?php
+include 'data.inc.php';
 
 $shippingThreshold = 10000;
 $shippingFlatAmount = 200;
@@ -13,11 +12,21 @@ $subtotal = 0;
 $shipping = 0;
 $grandTotal = 0;
 
+$subtotal = $price1 * $quantity1 + $price2 * $quantity2 +$price3 * $quantity3 + $price4 * $quantity4;
+if ($subtotal >= $shippingThreshold ){
+    $shipping = 100;
+}
+else {
+    $shipping = $shippingFlatAmount;
+}
+
+$grandTotal = $subtotal + $shipping;
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Lab 08 - PHP</title>
@@ -27,24 +36,23 @@ $grandTotal = 0;
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-orange.min.css">
-    
+
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 </head>
-
 <body>
-    
 <!-- You should decide where to add the `header.inc.php` and `left.inc.php` -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
             mdl-layout--fixed-header">
-
+    <?php include 'header.inc.php'; ?>
+    <?php include 'left.inc.php'; ?>
   <main class="mdl-layout__content mdl-color--grey-50">
     <header class="mdl-color--blue-grey-200">
       <h4>Order Summaries</h4>
       <p>Examine your customer orders</p>
-    </header>   
+    </header>
     <section class="page-content">
-    
+
         <div class="mdl-grid">
 
           <!-- mdl-cell + mdl-card -->
@@ -60,10 +68,10 @@ $grandTotal = 0;
                         echo '<li><a href="#">Order #' . $i . '</a></li>';
                     }
 
-                   ?>               
-                </ul>  
+                   ?>
+                </ul>
 
-            </div>    
+            </div>
           </div>  <!-- / mdl-cell + mdl-card -->
 
 
@@ -94,12 +102,12 @@ $grandTotal = 0;
                       <tr class="totals">
                           <td colspan="4">Shipping</td>
                           <td>$<?php echo number_format($shipping,2); ?></td>
-                      </tr> 
+                      </tr>
                       <tr class="grandtotals">
                           <td colspan="4">Grand Total</td>
                           <td>$<?php echo number_format($grandTotal,2); ?></td>
-                      </tr>                            
-                  </tfoot>          
+                      </tr>
+                  </tfoot>
                   <tbody>
                     <?php
                         // Here you need to complete the function outputOrderRow() in functions.inc.php
@@ -108,7 +116,6 @@ $grandTotal = 0;
                         outputOrderRow($file3, $title3, $quantity3, $price3);
                         outputOrderRow($file4, $title4, $quantity4, $price4);
                     ?>
-          
                   </tbody>
 
                 </table>
@@ -120,13 +127,13 @@ $grandTotal = 0;
 
 
         </div>  <!-- / mdl-grid -->
-    
+
 
     </section>
   </main>
-  
-  
+
+
 </div>
-          
+
 </body>
 </html>
