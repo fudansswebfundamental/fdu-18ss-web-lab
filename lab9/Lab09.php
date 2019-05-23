@@ -1,9 +1,6 @@
 <?php
 include 'travel-data.inc.php';
-
-
-
-
+include 'functions.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +23,10 @@ include 'travel-data.inc.php';
 </head>
 
 <body>
-    <?php include 'header.inc.php'; ?>
-    
-
+    <?php include 'header.inc.php';
+    ?>
+    <?php include 'left.inc.php';
+    ?>
 
     <!-- Page Content -->
     <main class="container">
@@ -36,14 +34,14 @@ include 'travel-data.inc.php';
         
         <div class="btn-group countryButtons" role="group" aria-label="...">
               <a role="button" class="btn btn-default" href="list.php">All</a>
-           
-              <?php   
+
+              <?php
               /* you will need to fill this place with appropriate PHP */
               /* hint: use array and loop */
               //the next line is an example
-              //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a> 
-
-
+              foreach ($countries as $key){
+                  echo generateLink('list.php', "$key"  ,"btn btn-default");
+              }
               ?>
                      
         </div>               
@@ -52,28 +50,28 @@ include 'travel-data.inc.php';
 
 		<ul class="caption-style-2">
          
-          <?php   
+          <?php
           /* you will need to fill this place with appropriate PHP */ 
           /* hint: use array and loop */
           //the next lines are one of the elements
           //you need to fill the elements with data provided
-
-
-   //        <li>
-   //              <a href="detail.php?id=22" class="img-responsive">
-   //              	<img src="images/square/6114850721.jpg" alt="View of Cologne">
-   //              	<div class="caption">
-   //              		<div class="blur">
-   //              		</div>
-   //              		<div class="caption-text">
-   //              			<h1>View of Cologne</h1>
-   //              		</div>
-   //              	</div>
-   //              </a>
-			// </li>
+          foreach ($images as $key=>$value) {
+              echo '<li>
+                 <a href="detail.php?id=22" class="img-responsive">
+                 	<img src= "images/square/'.$value["path"] .'" alt="View of Cologne">
+                 	<div class="caption">
+                 		<div class="blur">
+                 		</div>
+                 		<div class="caption-text">
+                 			<h1>'.$value["title"].'</h1>
+                 		</div>
+                 	</div>
+                 </a>
+			 </li>';
+          }
           ?>
 
-       </ul>       
+        </ul>
 
       
     </main>
@@ -88,10 +86,8 @@ include 'travel-data.inc.php';
         
 
     </footer>
-
-
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!--        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
 </body>
 
 </html>
