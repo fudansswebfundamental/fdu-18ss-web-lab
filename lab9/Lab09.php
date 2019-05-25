@@ -1,5 +1,6 @@
 <?php
 include 'travel-data.inc.php';
+include 'functions.inc.php';
 
 
 
@@ -41,7 +42,12 @@ include 'travel-data.inc.php';
               /* you will need to fill this place with appropriate PHP */
               /* hint: use array and loop */
               //the next line is an example
-              //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a> 
+              //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a>
+              $short = array ("CA","DE","GR","IT","GB","US");
+              for ($i=0;$i<=5;$i++){
+                  $j = $short[$i];
+                  echo generateLink($countries[$j],$countries[$j],"btn btn-default");
+              }
 
 
               ?>
@@ -57,20 +63,11 @@ include 'travel-data.inc.php';
           /* hint: use array and loop */
           //the next lines are one of the elements
           //you need to fill the elements with data provided
-
-
-   //        <li>
-   //              <a href="detail.php?id=22" class="img-responsive">
-   //              	<img src="images/square/6114850721.jpg" alt="View of Cologne">
-   //              	<div class="caption">
-   //              		<div class="blur">
-   //              		</div>
-   //              		<div class="caption-text">
-   //              			<h1>View of Cologne</h1>
-   //              		</div>
-   //              	</div>
-   //              </a>
-			// </li>
+          $numarr = array(22,54,7,19,46,6,60,58,75,77,27,2,24,13,101,102);
+          for ($i=0;$i<=15;$i++) {
+              $number=$numarr[$i];
+              outputPostRow($number);
+          }
           ?>
 
        </ul>       

@@ -1,7 +1,7 @@
 <?php
 
 function generateLink($url, $label, $class) {
-   $link = '<a href="' . $url . '" class="' . $class . '">';
+   $link = '<a href="list.php?country=' . $url . '" role="button" class="' . $class . '">';
    $link .= $label;
    $link .= '</a>';
    return $link;
@@ -10,6 +10,22 @@ function generateLink($url, $label, $class) {
 
 function outputPostRow($number)  {
     include("travel-data.inc.php");
+    $images=$GLOBALS['images'];
+    $img=$images[$number];
+    $imgpath = $img["path"];
+    $imgalt = $img["title"];
+    echo "<li>
+                 <a href='detail.php?id=$number' class='img-responsive'>
+                 	<img src='images/square/$imgpath' alt='$imgalt'>
+                 	<div class='caption'>
+                 		<div class='blur'>
+                 		</div>
+                 		<div class='caption-text'>
+                 			<h1>$imgalt</h1>
+                 		</div>
+                 	</div>
+                 </a>
+			 </li>";
 }
 
 /*
