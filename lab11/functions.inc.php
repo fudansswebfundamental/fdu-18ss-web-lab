@@ -8,7 +8,7 @@ function generateLink($url, $label, $class) {
 }
 
 
-function outputPostRow($number)  {
+function outputPostRow()  {
     include("travel-data.inc.php");
 }
 
@@ -16,6 +16,7 @@ function outputPostRow($number)  {
   Function constructs a string containing the <img> tags necessary to display
   star images that reflect a rating out of 5
 */
+
 function constructRating($rating) {
     $imgTags = "";
     
