@@ -98,7 +98,7 @@ while ($row = $result->fetch_assoc()) {
                         $title = $values['title'];
                         $description = $values['description'];
                         echo "<li>";
-                        echo "<a href='detail.php?id=$imageId' class='img-responsive'>";
+                        echo "<a href='detail.php?id=$imageId' class='img-responsive' style='height: 225px;width: 225px;'>";
                         echo "<img src='$src' alt='$title'>";
                         echo "<div class='caption'>";
                         echo "<div class='blur'></div>";
@@ -120,7 +120,7 @@ while ($row = $result->fetch_assoc()) {
                         $title = $row['Title'];
                         $description = $row['Description'];
                         echo "<li>";
-                        echo "<a href='detail.php?id=$imageId' class='img-responsive'>";
+                        echo "<a href='detail.php?id=$imageId' class='img-responsive'style='height: 225px;width: 225px;'>";
                         echo "<img src='$src' alt='$title'>";
                         echo "<div class='caption'>";
                         echo "<div class='blur'></div>";
