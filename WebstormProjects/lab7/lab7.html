@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Chapter 10</title>
+<link rel="stylesheet" href="lab7.css">
+<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+</head>    
+<body class="tiled">
+<header>
+    <h1>Art Filters</h1>
+</header>
+<main>
+    <div id="sliderBox">
+        <form>
+           <label>Opacity:       </label><p><input type="range" id="sliderOpacity" min="0" max="100" value="100" class="sliders" /> <span id="numOpacity">100</span>%</p>
+           <p><label>Saturation: </label><input type="range" id="sliderSaturation" min="1" max="300" value="100" class="sliders"/> <span id="numSaturation">100</span>%</p>
+           <p><label>Brightness: </label><input type="range" id="sliderBrightness" min="0" max="300" value="100" class="sliders" /> <span id="numBrightness">100</span>%</p>
+           <p><label>Hue Rotate: </label><input type="range" id="sliderHue" min="0" max="360" value="0" class="sliders" /> <span id="numHue">0</span>deg</p>
+           <p><label>Grayscale:  </label><input type="range" id="sliderGray" min="0" max="100" value="0" class="sliders"/> <span id="numGray">0</span>%</p>
+           <p><label>Blur:       </label><input type="range" id="sliderBlur" min="0" max="10" value="0" class="sliders" /> <span id="numBlur">0</span>px</p>
+            <p><input type="button" value="Reset" id="resetFilters"/></p>
+           <!-- <p><button>Reset</button></p>-->
+        </form>    
+    </div>
+    <figure id="imgManipulated">
+        <img src="images/medium/painting1.jpg" > 
+        <figcaption>
+            <em>Still Life with Flowers in a Glass Vase</em> <br>
+            Jan Davidsz. de Heem, 1650 - 1683
+        </figcaption>
+    </figure>   
+    <div id="thumbBox">
+        <div><img src="images/small/painting1.jpg"  alt="Still Life with Flowers in a Glass Vase" title="Jan Davidsz. de Heem, 1650 - 1683"/></div>
+        <div><img src="images/small/painting2.jpg"  alt="Portrait of Alida Christina Assink" title="Jan Adam Kruseman, 1833"/></div>
+        <div><img src="images/small/painting3.jpg"  alt="Self-portrait" title="Vincent van Gogh, 1887"/></div>
+        <div><img src="images/small/painting4.jpg"  alt="William II, Prince of Orange, and his Bride, Mary Stuart" title="Anthony van Dyck, 1641"/></div>
+        <div><img src="images/small/painting5.jpg"  alt="Milkmaid" title="Johannes Vermeer, c. 1660"/></div>
+    </div>
+</main>
+
+<script type="text/javascript">
+    $("document").ready(function(){
+        $("#thumbBox img").click(function(){
+            var way = $(this).attr("src").replace("small","medium");
+            var bigImg = $("#imgManipulated img");
+            var describe = $("#imgManipulated figcaption");
+            bigImg.attr("src",way);
+            describe.html("<em>"+$(this).attr("alt")+"</em> <br>"+$(this).attr("title"))
+        });
+    });
+
+
+    $("#sliderOpacity").bind("input propertychange",function(e){
+        let target1 = e.target;
+        $("#numOpacity").html(target1.value.toString());
+        $("#imgManipulated img").css("filter","opacity("+target1.value/100+")");
+    });
+
+    $("#sliderSaturation").bind("input propertychange",function(e){
+        let target2 = e.target;
+        $("#numSaturation").html(target2.value.toString());
+        $("#imgManipulated img").css("filter","saturate("+target2.value/100+")");
+    });
+
+    $("#sliderBrightness").bind("input propertychange",function(e){
+        let target3 = e.target;
+        $("#numBrightness").html(target3.value.toString());
+        $("#imgManipulated img").css("filter","brightness("+target3.value/100+")");
+    });
+
+    $("#sliderHue").bind("input propertychange",function(e){
+        let target4 = e.target;
+        $("#numHue").html(target4.value.toString());
+        $("#imgManipulated img").css("-webkit-filter","hue-rotate("+target4.value+")");
+    });
+
+    $("#sliderGray").bind("input propertychange",function(e){
+        let target5 = e.target;
+        $("#numGray").html(target5.value.toString());
+        $("#imgManipulated img").css("filter","grayscale("+target5.value/100+")");
+    });
+
+    $("#sliderBlur").bind("input propertychange",function(e){
+        let target6 = e.target;
+        $("#numBlur").html(target6.value.toString());
+        $("#imgManipulated img").css("filter","blur("+target6.value+")");
+    });
+
+    $("#resetFilters").click(function(){
+        $("#imgManipulated img").css("filter","none");
+    });
+
+</script>    
+</body>   
+</html>
