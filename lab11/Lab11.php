@@ -3,8 +3,12 @@
 
 //****** Hint ******
 //connect database and fetch data here
-
-
+include 'functions.inc.php';
+$dbhost='localhost';
+$dbuser='root';
+$dbpass='15298526406zyff';
+$conn=mysqli_connect($dbhost,$dbuser,$dbpass);
+mysqli_select_db($conn,'travel');
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +41,9 @@
         <div class="panel panel-default">
           <div class="panel-heading">Filters</div>
           <div class="panel-body">
+
+
+
             <form action="Lab11.php" method="get" class="form-horizontal">
               <div class="form-inline">
               <select name="continent" class="form-control">
@@ -46,7 +53,8 @@
 
                 //****** Hint ******
                 //display the list of continents
-
+                $sql='SELECT ContinentCode,ContinentName FROM Continents';
+                $result=mysqli_query($conn,$sql);
                 while($row = $result->fetch_assoc()) {
                   echo '<option value=' . $row['ContinentCode'] . '>' . $row['ContinentName'] . '</option>';
                 }
@@ -60,7 +68,13 @@
                 //Fill this place
 
                 //****** Hint ******
-                /* display list of countries */ 
+                /* display list of countries */
+                $sql1='SELECT Continent,CountryName FROM Countries';
+                $result1=mysqli_query($conn,$sql1);
+                while($row = $result1->fetch_assoc()) {
+                    echo '<option value=' . $row['Continent'] . '>' . $row['CountryName'] . '</option>';
+                }
+
                 ?>
               </select>    
               <input type="text"  placeholder="Search title" class="form-control" name=title>
@@ -69,29 +83,22 @@
             </form>
 
           </div>
-        </div>     
-                                    
+        </div>
 
 		<ul class="caption-style-2">
             <?php 
             //Fill this place
 
             //****** Hint ******
-            /* use while loop to display images that meet requirements ... sample below ... replace ???? with field data
-            <li>
-              <a href="detail.php?id=????" class="img-responsive">
-                <img src="images/square-medium/????" alt="????">
-                <div class="caption">
-                  <div class="blur"></div>
-                  <div class="caption-text">
-                    <p>????</p>
-                  </div>
-                </div>
-              </a>
-            </li>        
-            */ 
+            /* use while loop to display images that meet requirements ... sample below ... replace ???? with field data            */
+
+            $continent1= isset($_GET["continent"])? $_GET["continent"] : '';
+            $continent2= isset($_GET["country"])? $_GET["country"] : '';
+            $sql2='SELECT ImageID,Path,Title,ContinentCode FROM ImageDetails';
+            $result2=mysqli_query($conn,$sql2);
+            findByContinent($continent1,$continent2,$result2);
             ?>
-       </ul>       
+       </ul>
 
       
     </main>
