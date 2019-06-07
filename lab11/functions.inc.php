@@ -1,14 +1,12 @@
 <?php
 
-function findByContinent($continent1,$continent2,$result2){
-    while($row = $result2->fetch_assoc()) {
-        $imgid = $row['ImageID'];
-        $path = $row['Path'];
-        $title = $row['Title'];
-        $continent = $row['ContinentCode'];
-        if ($continent1 || $continent2) {
-            if ($continent1 == $continent || $continent2 == $continent) {
-                echo "<li>
+function findByContinent($result){
+        while($row = $result->fetch_assoc()) {
+            $imgid = $row['ImageID'];
+            $path = $row['Path'];
+            $title = $row['Title'];
+            $continent = $row['ContinentCode'];
+            echo "<li>
               <a href='detail.php?id=$imgid' class='img-responsive'>
                 <img src='images/square-medium/$path' alt='$continent' style='width: 225px;height: 225px'>
                 <div class='caption'>
@@ -19,22 +17,36 @@ function findByContinent($continent1,$continent2,$result2){
                 </div>
               </a>
             </li>";
-            }
-
-        } else {
-            echo "<li>
-              <a href='detail.php?id=$imgid' class='img-responsive'>
-                <img src='images/square-medium/$path' alt='$continent'style='width: 225px;height: 225px'>
-                <div class='caption'>
-                  <div class='blur'></div>
-                  <div class='caption-text'>
-                    <h1>$title</h1>
-                  </div>
-                </div>
-              </a>
-            </li>";
         }
-    }
+
+
+//    $sql='SELECT ImageID,Path,Title,ContinentCode FROM ImageDetails';
+//    $result=mysqli_query($conn,$sql);
+//    while($row = $result->fetch_assoc()) {
+//        $imgid = $row['ImageID'];
+//        $path = $row['Path'];
+//        $title = $row['Title'];
+//        $continent = $row['ContinentCode'];
+//        if ($continent1 || $continent2) {
+//            if ($continent1 == $continent || $continent2 == $continent) {
+
+
+
+//        } else {
+//        echo "<li>
+//              <a href='detail.php?id=$imgid' class='img-responsive'>
+//                <img src='images/square-medium/$path' alt='$continent'style='width: 225px;height: 225px'>
+//                <div class='caption'>
+//                  <div class='blur'></div>
+//                  <div class='caption-text'>
+//                    <h1>$title</h1>
+//                  </div>
+//                </div>
+//              </a>
+//            </li>";
+//        }
+//    }
+
 }
 
 function generateLink($url, $label, $class) {

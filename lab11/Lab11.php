@@ -94,9 +94,18 @@ mysqli_select_db($conn,'travel');
 
             $continent1= isset($_GET["continent"])? $_GET["continent"] : '';
             $continent2= isset($_GET["country"])? $_GET["country"] : '';
-            $sql2='SELECT ImageID,Path,Title,ContinentCode FROM ImageDetails';
-            $result2=mysqli_query($conn,$sql2);
-            findByContinent($continent1,$continent2,$result2);
+            if ($continent1 || $continent2) {
+                $sql2="SELECT * FROM ImageDetails WHERE ContinentCode='$continent1' or ContinentCode='$continent2'";
+                $result2=mysqli_query($conn,$sql2);
+                findByContinent($result2);
+            }
+            else{
+                $sql3='SELECT * FROM ImageDetails';
+                $result3=mysqli_query($conn,$sql3);
+                findByContinent($result3);
+            }
+
+
             ?>
        </ul>
 
