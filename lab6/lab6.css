@@ -5,33 +5,33 @@
 
 p, h1, h2, h3, ul, li, body {
     padding: 0;
-    margin: 0;    
+    margin: 0;
 }
 
 
 h1, h2, h3, nav, footer {
- font-family: Lobster, Cambria, "Times New Roman", serif;
+    font-family: Lobster, Cambria, "Times New Roman", serif;
 }
 body {
-   font-family: "Open Sans", Verdana, Arial, sans-serif;
-   font-size: 100%;
-   background-color: #E8EAF6;
+    font-family: "Open Sans", Verdana, Arial, sans-serif;
+    font-size: 100%;
+    background-color: #E8EAF6;
 }
 header {
     padding: 15px;
-    width: auto; 
+    width: auto;
     margin: 0 0;
-    background-color: #303F9F;   
+    background-color: #303F9F;
     color: #FAFAFA;
     height: 30px;
 }
-header h2 {    
+header h2 {
     float: left;
-    font-size: 22pt;  
+    font-size: 22pt;
     margin-left:10px;
 }
 header nav {
-     float: right;  
+    float: right;
     margin: 10px 15px 10px 10px;
     top: 5px;
 }
@@ -42,7 +42,7 @@ main {
 
 #featured {
     margin: 0 2px;
-    border: solid 1px #ccc; 
+    border: solid 1px #ccc;
     padding: 8px 5px 3px 9px;
     width: 646px;
     background-color: #FAFAFA;
@@ -65,7 +65,7 @@ main {
 }
 
 #thumbnails img {
-    width: 116px;   
+    width: 116px;
     height: 116px;
     border: solid 1px #ccc;
     padding: 4px;
@@ -78,4 +78,3 @@ main {
     transition-duration: 300ms;
     cursor: pointer;
 }
-

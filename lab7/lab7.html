@@ -2,8 +2,8 @@
 <head>
 <title>Chapter 10</title>
 <link rel="stylesheet" href="lab7.css">
-<script>
-</script>      
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js">
+    </script>
 </head>    
 <body class="tiled">
 <header>
@@ -18,14 +18,14 @@
            <p><label>Hue Rotate: </label><input type="range" id="sliderHue" min="0" max="360" value="0" class="sliders" /> <span id="numHue">0</span>deg</p>
            <p><label>Grayscale: </label><input type="range" id="sliderGray" min="0" max="100" value="0" class="sliders"/> <span id="numGray">0</span>%</p>
            <p><label>Blur: </label><input type="range" id="sliderBlur" min="0" max="10" value="0" class="sliders" /> <span id="numBlur">0</span>px</p>
-           <p><button id="resetFilters">Reset</button> </p>
+           <p><input type="button" id="resetFilters" value="Reset"></p>
         </form>    
     </div>
     <figure id="imgManipulated">
-        <img src="images/medium/painting1.jpg" > 
+        <img src="images/medium/painting1.jpg" id="bigpic">
         <figcaption>
-            <em>Still Life with Flowers in a Glass Vase</em> <br>
-            Jan Davidsz. de Heem, 1650 - 1683
+            <em><span id="alt">Still Life with Flowers in a Glass Vase</span></em> <br>
+            <span id="title">Jan Davidsz. de Heem, 1650 - 1683</span>
         </figcaption>
     </figure>   
     <div id="thumbBox">
@@ -37,6 +37,47 @@
     </div>
 </main>
 <script>
+    $(document).ready(function () {
+        $("#thumbBox").click(function (e) {
+            var src=$(e.target).attr("src");
+            var alt=$(e.target).attr("alt");
+            var title=$(e.target).attr("title");
+            src=src.replace("small","medium");
+            $("#bigpic").attr("src",src);
+            $("#alt").html(alt);
+            $("#title").html(title);
+        })
+
+        $("#resetFilters").click(function () {
+            $("#bigpic").css({"-webkit-filter": "none" });
+            $("#bigpic").css({"filter": "none" });
+            $("#sliderOpacity").val("100");$("#numOpacity").html(100);
+            $("#sliderSaturation").val("100");$("#numSaturation").html(100);
+            $("#sliderBrightness").val("100");$("#numBrightness").html(100);
+            $("#sliderBlur").val("0");$("#numBlur").html(0);
+            $("#sliderGray").val("0");$("#numGray").html(0);
+            $("#sliderHue").val("0");$("#numHue").html(0);
+        })
+
+        $("input.sliders").on("input propertychange",function(){
+            $("#numOpacity").html($("#sliderOpacity").val());
+            $("#numSaturation").html($("#sliderSaturation").val());
+            $("#numBrightness").html($("#sliderBrightness").val());
+            $("#numHue").html($("#sliderHue").val());
+            $("#numGray").html($("#sliderGray").val());
+            $("#numBlur").html($("#sliderBlur").val());
+
+            var filt="opacity("+$("#sliderOpacity").val()+"%)"
+                    +"saturate("+$("#sliderSaturation").val()+"%)"
+                    +"brightness("+$("#sliderBrightness").val()+"%)"
+                    +"hue-rotate("+$("#sliderHue").val()+"deg)"
+                    +"grayscale("+$("#sliderGray").val()+"%)"
+                    +"blur("+$("#sliderBlur").val()+"px)"
+
+            $("#bigpic").css({"-webkit-filter": filt });
+            $("#bigpic").css({"filter": filt });
+        })
+    })
 
 </script>    
 </body>   
